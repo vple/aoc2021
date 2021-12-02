@@ -7,9 +7,10 @@ const part1 = (input: string) => {
   let depth = 0;
 
   for(let i = 0; i < lines.length; i++) {
-    const instructions = lines[i].split(' ');
-    const value = parseInt(instructions[1]);
-    switch(instructions[0]) {
+    const [dir, val] = lines[i].split(' ');
+    const value = parseInt(val);
+
+    switch(dir) {
       case 'forward':
         horizontal += value;
         break;
@@ -35,9 +36,10 @@ const part2 = (input: string) => {
   let aim = 0;
 
   for(let i = 0; i < lines.length; i++) {
-    const instructions = lines[i].split(' ');
-    const value = parseInt(instructions[1]);
-    switch(instructions[0]) {
+    const [dir, val] = lines[i].split(' ');
+    const value = parseInt(val);
+
+    switch(dir) {
       case 'forward':
         horizontal += value;
         depth += (aim * value);
